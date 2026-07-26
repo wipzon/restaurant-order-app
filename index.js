@@ -7,8 +7,9 @@ function renderMenu(){
             <div>
                 <h2>${item.name}</h2>
                 <p>${item.ingredients}</p>
-                <p>${item.price}</p>
+                <h3>$${item.price}</h3>
             </div>
+            <button>+</button>
         </div>
         `
     ).join('')
