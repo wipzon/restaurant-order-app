@@ -29,9 +29,28 @@
                 <h2>Your order</h2>
                 <div id="order-list"></div>
                 <div id="total-price"></div>
-                <button class="complete-order">Complete order</button>
+                <button class="complete-order" id="complete-order">Complete order</button>
             </div>
         </main>
+
+        <div class="payement-modal" id="payement-modal">
+            <h1>Enter card details</h1>
+            <form>
+                <label for="name">Full name</label>
+                <input placeholder="Full name on card" type="text" id="name" name="name"
+                minlength="2" maxlength="30" required>
+
+                <label for="number">Card number</label>
+                <input placeholder="1234 5678 9012 3456" type="text" id="number" name="number"
+                inputmode="numeric" pattern="[0-9]{16}" maxlength="16" required>
+
+                <label for="ccv">CCV</label>
+                <input placeholder="123" type="text" id="ccv" name="ccv"
+                inputmode="numeric" pattern="[0-9]{3}" maxlength="3" required>
+
+                <button class="submit" type="submit">Pay</button>
+            </form>
+        </div>
 
 	<script src="index.js" type="module"></script>
     </div>

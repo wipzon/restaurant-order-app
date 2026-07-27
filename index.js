@@ -1,6 +1,7 @@
 import menuArray from "./data.js";
 
 const orderSummary = document.getElementById('order-summary')
+const payementModal = document.getElementById('payement-modal')
 
 function renderMenu(){
     document.getElementById("menu").innerHTML = menuArray.map(item => `
@@ -55,5 +56,15 @@ function removeItem(index){
     cart.splice(index, 1)
     renderOrder()
 }
+
+document.getElementById('complete-order').addEventListener('click', function(){
+    payementModal.style.display = 'flex'
+})
+
+document.querySelector('form').addEventListener('submit', function(e){
+    e.preventDefault()
+    e.target.reset()
+    payementModal.style.display = 'none'
+})
 
 renderMenu()
