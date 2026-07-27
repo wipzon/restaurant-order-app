@@ -2,6 +2,9 @@ import menuArray from "./data.js";
 
 const orderSummary = document.getElementById('order-summary')
 const payementModal = document.getElementById('payement-modal')
+const thanksModal = document.getElementById('thanks')
+
+
 
 function renderMenu(){
     document.getElementById("menu").innerHTML = menuArray.map(item => `
@@ -65,6 +68,8 @@ document.querySelector('form').addEventListener('submit', function(e){
     e.preventDefault()
     e.target.reset()
     payementModal.style.display = 'none'
+    orderSummary.style.display = 'none'
+    thanksModal.style.display = 'flex'
 })
 
 renderMenu()
