@@ -1,4 +1,5 @@
 import menuArray from "./data.js";
+
 const orderSummary = document.getElementById('order-summary')
 
 function renderMenu(){
@@ -18,10 +19,10 @@ function renderMenu(){
 
 const cart = []
 function renderOrder(){
-    document.getElementById("order-list").innerHTML = cart.map(item => `
+    document.getElementById("order-list").innerHTML = cart.map((item,index)=> `
         <div class="order-item">
             <h2>${item.name}</h2>
-            <p>remove</p>
+            <button data-index="${index}">remove</button>
             <h3>$${item.price}</h3>
         </div>
         `).join('')
@@ -37,6 +38,9 @@ document.addEventListener('click',function(e){
     if(e.target.dataset.id){
         addItem(e.target.dataset.id)
     }
+    if(e.target.dataset.index !== undefined){
+        removeItem(Number(e.target.dataset.index))
+    }
 })
 
 function addItem(itemId){
@@ -45,6 +49,11 @@ function addItem(itemId){
     cart.push(targetObj)
     renderOrder()
     orderSummary.style.display = 'flex'
+}
+
+function removeItem(index){
+    cart.splice(index, 1)
+    renderOrder()
 }
 
 renderMenu()

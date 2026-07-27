@@ -120,10 +120,16 @@ h1,h2,h3{
     margin: 0;
 }
 
-.order-item p{
+.order-item button{
     color: #BBBBBB;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
+    background: none;
+    border: none;
+}
+.order-item button:hover,
+.order-item button:focus-visible{
+    color: #8f8f8f;
 }
 
 .order-item h3 {
@@ -149,6 +155,7 @@ h1,h2,h3{
 
     padding: 22px;
     margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .complete-order:hover,
